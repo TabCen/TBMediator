@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'chenfeigogo@gmail.com' => '964267617@qq.com' }
-  s.source           = { :git => 'git@github.com:TabCen/TBMediator.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/TabCen/TBMediator.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
