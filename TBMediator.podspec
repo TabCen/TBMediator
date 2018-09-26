@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'TBMediator'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of TBMediator.'
+  s.summary          = '组件化中间件'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,15 +17,13 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = "组件化中间件，相当于直接调用对应的类方法 + (void)mediatorLoad:(UIViewController *)fromVC params:(NSDictionary *)params handler:(MediatorBlock)block{}"
 
-  s.homepage         = 'https://github.com/chenfeigogo@gmail.com/TBMediator'
+  s.homepage         = 'https://github.com/TabCen/TBMediator'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'chenfeigogo@gmail.com' => '964267617@qq.com' }
-  s.source           = { :git => 'https://github.com/chenfeigogo@gmail.com/TBMediator.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@github.com:TabCen/TBMediator.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

@@ -38,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03BF9A92DD6085CD0B7E1BF03745F464 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		03BF9A92DD6085CD0B7E1BF03745F464 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		07163285AC2A30DF214D5442F48693FC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF710C58574ACE1B8180E5CBD7DD590 /* Pods-TBMediator_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TBMediator_Tests-resources.sh"; sourceTree = "<group>"; };
 		1BE52130F024470DBEEB8E23187C007A /* Pods-TBMediator_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TBMediator_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,18 +58,18 @@
 		7B7317B4BA5E326983F0BF9E75EC2BB9 /* Pods-TBMediator_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TBMediator_Example.modulemap"; sourceTree = "<group>"; };
 		7DCA73859ADE40BB05F75761179C0BB1 /* Pods-TBMediator_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TBMediator_Example-frameworks.sh"; sourceTree = "<group>"; };
 		88315ECE944161002CE513A4B5A45066 /* TBMediator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TBMediator-prefix.pch"; sourceTree = "<group>"; };
-		90E99767A85E70395B1D9ECC41C008B0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		90E99767A85E70395B1D9ECC41C008B0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B6CE8436306554351DF2C81DBC889D43 /* Pods-TBMediator_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TBMediator_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BBE93CFB75D537971BAB4505AC1C8D99 /* TBMediator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TBMediator.m; path = TBMediator/Classes/TBMediator.m; sourceTree = "<group>"; };
 		BFB161777587D14B7EFD4872E35AE36F /* TBMediator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TBMediator.xcconfig; sourceTree = "<group>"; };
-		C21B2D92C36FE0253F53D8B2B18C6E1D /* Pods_TBMediator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TBMediator_Example.framework; path = "Pods-TBMediator_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD372D1C4A291878E06A2E08B33F1446 /* TBMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TBMediator.framework; path = TBMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C21B2D92C36FE0253F53D8B2B18C6E1D /* Pods_TBMediator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TBMediator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD372D1C4A291878E06A2E08B33F1446 /* TBMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TBMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41946C2001A6D99017E4276EF5EE3A5 /* Pods-TBMediator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TBMediator_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D7DBA8B890855D79E172264C5489B681 /* Pods-TBMediator_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TBMediator_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DBBCEDF65ED6AB60AC189059FB8D26CA /* Pods-TBMediator_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TBMediator_Tests.modulemap"; sourceTree = "<group>"; };
-		E39C5DA76F51B95849C8DCFCCA27938F /* Pods_TBMediator_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TBMediator_Tests.framework; path = "Pods-TBMediator_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E765774AA5D3384A4F9DD61B69DB4E01 /* TBMediator.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = TBMediator.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E39C5DA76F51B95849C8DCFCCA27938F /* Pods_TBMediator_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TBMediator_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E765774AA5D3384A4F9DD61B69DB4E01 /* TBMediator.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = TBMediator.podspec; sourceTree = "<group>"; };
 		F2C93B76DF61AF9DAFAAF87907CEA121 /* Pods-TBMediator_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TBMediator_Example-resources.sh"; sourceTree = "<group>"; };
 		F79B39F14BF244F312D6B120DFB9D8FE /* TBMediator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TBMediator.modulemap; sourceTree = "<group>"; };
 		F7CBEAEE708B4875811E44CF616707EE /* TBMediator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TBMediator-dummy.m"; sourceTree = "<group>"; };

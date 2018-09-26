@@ -7,6 +7,7 @@
 //
 
 #import "TBViewController.h"
+#import <TBMediator/TBMediator.h>
 
 @interface TBViewController ()
 
@@ -24,6 +25,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)testABtnClicked:(id)sender {
+    [TBMediator callViewController:@"TBTestAViewController" params:@{@"paramsA":@"aaaa"} viewController:self callBack:^(NSDictionary *callBackDic) {
+        
+    }];
 }
 
 @end

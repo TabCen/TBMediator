@@ -21,6 +21,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		638B5B90215B4F2C007401CD /* TBTestAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638B5B8F215B4F2C007401CD /* TBTestAViewController.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		A83F92AD5BD4CEB69C7F5533 /* Pods_TBMediator_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252CDBF8BEAF40E942899A9E /* Pods_TBMediator_Example.framework */; };
@@ -37,11 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		012614DC078ACC0010C7D2CE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		012614DC078ACC0010C7D2CE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		252CDBF8BEAF40E942899A9E /* Pods_TBMediator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TBMediator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC7165CB994A63E1E47BDDF /* Pods_TBMediator_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TBMediator_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C90B908AC406B32777357E7 /* TBMediator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = TBMediator.podspec; path = ../TBMediator.podspec; sourceTree = "<group>"; };
-		40FCF14A395F89EAB4B72920 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3C90B908AC406B32777357E7 /* TBMediator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TBMediator.podspec; path = ../TBMediator.podspec; sourceTree = "<group>"; };
+		40FCF14A395F89EAB4B72920 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5304CA92AD7376BEC5BCFDD2 /* Pods-TBMediator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBMediator_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBMediator_Example/Pods-TBMediator_Example.release.xcconfig"; sourceTree = "<group>"; };
 		58189682AEB165BA02B087DD /* Pods-TBMediator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBMediator_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TBMediator_Example/Pods-TBMediator_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* TBMediator_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBMediator_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +64,8 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		638B5B8E215B4F2C007401CD /* TBTestAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBTestAViewController.h; sourceTree = "<group>"; };
+		638B5B8F215B4F2C007401CD /* TBTestAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBTestAViewController.m; sourceTree = "<group>"; };
 		6CDACF4AA250905BC8816970 /* Pods-TBMediator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TBMediator_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TBMediator_Tests/Pods-TBMediator_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 		6003F593195388D20070C39A /* Example for TBMediator */ = {
 			isa = PBXGroup;
 			children = (
+				638B5B8E215B4F2C007401CD /* TBTestAViewController.h */,
+				638B5B8F215B4F2C007401CD /* TBTestAViewController.m */,
 				6003F59C195388D20070C39A /* TBAppDelegate.h */,
 				6003F59D195388D20070C39A /* TBAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -355,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638B5B90215B4F2C007401CD /* TBTestAViewController.m in Sources */,
 				6003F59E195388D20070C39A /* TBAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* TBViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
