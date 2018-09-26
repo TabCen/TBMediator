@@ -1,0 +1,6 @@
+framework module Pods_TBMediator_Tests {
+  umbrella header "Pods-TBMediator_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

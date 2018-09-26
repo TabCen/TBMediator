@@ -1,0 +1,6 @@
+framework module TBMediator {
+  umbrella header "TBMediator-umbrella.h"
+
+  export *
+  module * { export * }
+}

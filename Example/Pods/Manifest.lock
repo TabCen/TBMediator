@@ -1,0 +1,16 @@
+PODS:
+  - TBMediator (0.1.0)
+
+DEPENDENCIES:
+  - TBMediator (from `../`)
+
+EXTERNAL SOURCES:
+  TBMediator:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TBMediator: 63a3b2f641ddde5ac1939427133507adad70a97c
+
+PODFILE CHECKSUM: 05ffe93529a75495b07cb9be98ca8eaf6325a2ca
+
+COCOAPODS: 1.5.3

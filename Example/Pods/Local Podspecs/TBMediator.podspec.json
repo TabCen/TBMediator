@@ -1,0 +1,22 @@
+{
+  "name": "TBMediator",
+  "version": "0.1.0",
+  "summary": "A short description of TBMediator.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/chenfeigogo@gmail.com/TBMediator",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "chenfeigogo@gmail.com": "964267617@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/chenfeigogo@gmail.com/TBMediator.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TBMediator/Classes/**/*"
+}
