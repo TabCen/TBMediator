@@ -18,8 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    [self aprint:@"dafd",@12,nil];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,36 +34,34 @@
 }
 
 - (IBAction)test2BtnClicked:(id)sender {
-//    [TBMediator performTarget:@"TBTestAViewController" action:@"testFunction" params:nil shouldCacheTarget:NO];
-//    [TBMediator performTarget:@"TBTestAViewController" action:@selector(testFunction:) params:nil shouldCacheTarget:NO];
-//
-//    NSArray *arr = [NSArray arrayWithObjects:@"a",@"b", nil];
+    ///调用TBTestAViewController的方法testBFunction
+    [TBMediator performTargetClassName:@"TBTestAViewController" action:@selector(testBFunction) params:nil, nil];
     
-//    NSArray * a = [TBMediator safePerformAction:@selector(aprint:bbb:ccc:ddd:) target:self params:@"shabi",@"1234567",@32,@(TRUE), nil];
-    NSArray *arr = [TBMediator performTargetClassName:@"TBViewController" action:@selector(aprint:bbb:ccc:ddd:) params:@"shabi",@"1234567",@32,@(TRUE), nil];
+    ///调用方法
+    [TBMediator performTarget:self action:@selector(aprint:) params:@"我是一个参数", nil];
     
+    ///调用带返回
+    NSArray *arr = [TBMediator performTargetClassName:@"TBViewController" action:@selector(aprint:bbb:ccc:ddd:) params:@"你",@"最",@6,@"B", nil];
     NSLog(@"%@",arr);
-    
+
+    ///测试URL调用方法
+    [TBMediator performActionWithUrl:[NSURL URLWithString:@"tb://TBViewController/testForUrl:?a=12&b=44"] completion:^(NSDictionary *dict) {
+        NSLog(@"%@",dict);
+    }];
 }
-#define AppLog(format,...)  NSLog((format),##__VA_ARGS__)
 
 -(NSArray *)aprint:(id)a bbb:(id)b ccc:(id)c ddd:(id)d{
-//    return [NSString stringWithFormat:@"%@,%@,%@,%@",a,b,c,d];
     return @[a,b,c,d];
 }
 
--(void)aprint:(id)firstObj, ... NS_REQUIRES_NIL_TERMINATION{
+-(void)aprint:(id)firstObj{
     NSLog(@"%@",firstObj);
-    
-    va_list args;
-    id arg;
-    va_start(args, firstObj);
-    while((arg = va_arg(args, id))){
-        NSLog(@"%@",arg);
-    }
-    va_end(args);
 }
 
+-(NSString *)testForUrl:(id)sender{
+    NSLog(@"%@",sender);
+    return @"12345678";
+}
 
 
 @end

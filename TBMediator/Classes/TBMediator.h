@@ -5,7 +5,6 @@
 //  Created by David on 2018/9/4.
 //  Copyright © 2018年 casa. All rights reserved.
 /**  本库的主要思想源于 https://github.com/casatwy/CTMediator 作者是个大帅哥
- *   前缀TB为公司项目糖吧的缩写，本人不喜欢用自己名字的缩写，很low
  */
 
 #import <UIKit/UIKit.h>
@@ -38,7 +37,41 @@ static NSString * const MediatorFounctionName = @"mediatorLoad:params:handler:";
  */
 + (void)callViewController:(NSString *)className params:(NSDictionary *)params viewController:(UIViewController *)viewController callBack:(CallBackBlock)callBack;
 
+
+/**
+ 调用某一个类的实例（类名className）方法action，可变参数为params
+
+ @param className 类名
+ @param action 方法
+ @param params 参数
+ @return 返回
+ */
 + (id)performTargetClassName:(NSString *)className action:(SEL)action params:(id)params,... NS_REQUIRES_NIL_TERMINATION;
 
+
+/**
+ 调用target对象中的某一个action方法，并且传递参数params，参数为可变参数
+
+ @param target 对象
+ @param action 方法
+ @param params 参数
+ @return 返回
+ */
 + (id)performTarget:(NSObject *)target action:(SEL)action params:(id)params,... NS_REQUIRES_NIL_TERMINATION;
+
+/**
+ URL调用法
+ scheme://[target]/[action]?[params]
+ 参数被拼接成一个字典
+ 所以在类中写法如
+ -(NSString *)testForUrl:(id)sender{
+ NSLog(@"%@",sender);
+ return @"12345678";
+ }
+ @param url 传递的url 如 "tb://TBViewController/testForUrl:?a=12&b=14"
+ @param completion 结束回掉
+ @return 调用方法的返回
+ */
++ (id)performActionWithUrl:(NSURL *)url completion:(void (^)(NSDictionary *dict))completion;
+
 @end

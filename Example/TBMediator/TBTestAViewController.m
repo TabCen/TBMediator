@@ -19,14 +19,17 @@
 +(void)mediatorLoad:(UIViewController *)fromVC params:(NSDictionary *)params handler:(MediatorBlock)block{
     TBTestAViewController *testAVC = [TBTestAViewController new];
     [fromVC presentViewController:testAVC animated:YES completion:^{
-        
+
     }];
 }
 
--(void)testFunction:(id)sender{
+-(void)testAFunction:(id)sender{
     NSLog(@"打印TBTestAViewController");
 }
 
+-(void)testBFunction{
+    NSLog(@"testBFunction");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

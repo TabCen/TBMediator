@@ -4,8 +4,9 @@
 //
 //  Created by David on 2018/9/4.
 //  Copyright © 2018年 casa. All rights reserved.
-/**  本库的主要思想源于 https://github.com/casatwy/CTMediator 作者是个大帅哥*/
-
+/**  本库的主要思想源于 https://github.com/casatwy/CTMediator 作者是个大帅哥
+ *   前缀TB为公司项目 糖吧 的缩写
+ */
 #import "TBMediator.h"
 
 #define tbStringIsEmpty(str) ([str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? YES : NO ||[str isEqualToString:@"(null)"])
@@ -47,19 +48,18 @@ static TBMediator *shareFile = nil;
     NSAssert(viewController, @"类名不能为空");
     ///类
     Class targetClass = NSClassFromString(className);
-    if (!targetClass) {
-        NSLog(@"调用控制器不存在_className:> %@",className);
-        return;
-    }
+    
+    NSString *errStr = [NSString stringWithFormat:@"调用控制器不存在_className:>%@",className];
+    NSAssert(targetClass, errStr);
+    
     SEL action = NSSelectorFromString(MediatorFounctionName);
     
     ///方法签名
     NSMethodSignature *methodSig = [targetClass methodSignatureForSelector:action];
     
-    if (!methodSig) {
-        NSLog(@"方法不存在_Founction:> [%@ %@]",className,MediatorFounctionName);
-        return;
-    }
+    NSString *errStr2 = [NSString stringWithFormat:@"方法不存在action:>[%@ %@]",className,MediatorFounctionName];
+    NSAssert(methodSig, errStr2);
+
     ///消息发送其实也可以采用代理的方法，调用代理方法
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSig];
     [invocation setTarget:targetClass];//0
@@ -70,47 +70,15 @@ static TBMediator *shareFile = nil;
     [invocation invoke];
 }
 
-///调用某个类的某个方法——copy from casa
-+ (id)performTarget:(NSString *)className action:(SEL)action params:(NSDictionary *)params shouldCacheTarget:(BOOL)shouldCacheTarget{
-    TBMediator *mediator = [TBMediator new];
-    
-    NSAssert(!tbStringIsEmpty(className), @"类名不能为空");
-    
-    Class targetClass;
-    
-    NSObject *target = mediator.cachedTarget[className];
-    
-    if (!target) {
-        targetClass = NSClassFromString(className);
-        target = [[targetClass alloc] init];
-        
-        if (!target) {
-            NSLog(@"调用控制器不存在_className:> %@",className);
-            return nil;
-        }
-    }
-    
-    if (shouldCacheTarget) {
-        mediator.cachedTarget[className] = target;
-    }
-    
-    if ([target respondsToSelector:action]) {
-//        return [mediator safePerformAction:action target:target params:params];
-        return nil;
-    } else {
-        return nil;
-    }
-}
-
 + (id)performTargetClassName:(NSString *)className action:(SEL)action params:(id)params,... NS_REQUIRES_NIL_TERMINATION{
     NSAssert(!tbStringIsEmpty(className), @"类名不能为空");
     NSObject *target;
     Class targetClass = NSClassFromString(className);
     target = [[targetClass alloc]init];
-    if(!target){
-        NSLog(@"target Not Found className:> %@",className);
-        return nil;
-    }
+    
+    NSString *errStr = [NSString stringWithFormat:@"对象生成失败_className:>%@",className];
+    NSAssert(target, errStr);
+
     if([target respondsToSelector:action]){////不定参数的传递不会m，所以直接将下面的方法原封不动得超过来、
         va_list args;
         va_start(args, params);
@@ -133,9 +101,9 @@ static TBMediator *shareFile = nil;
 + (id)performTarget:(NSObject *)target action:(SEL)action params:(id)params orVAList:(va_list)args{
     ///方法签名
     NSMethodSignature* methodSig = [target methodSignatureForSelector:action];
-    if(methodSig == nil) {
-        return nil;
-    }
+    NSString *errStr = [NSString stringWithFormat:@"方法不存在action:>[%@ %@]",NSStringFromClass([target class]),NSStringFromSelector(action)];
+    NSAssert(methodSig, errStr);
+  
     ///传参、调用
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSig];
     [invocation setTarget:target];  //0
@@ -145,14 +113,15 @@ static TBMediator *shareFile = nil;
         [invocation invoke];
     }else{
         [invocation setArgument:&params atIndex:2];
-        id arg;
-        int index = 3;
-        while((arg = va_arg(args, id))){
-            [invocation setArgument:&arg atIndex:index];
-            ++index;
+        if (args) {
+            id arg;
+            int index = 3;
+            while((arg = va_arg(args, id))){
+                [invocation setArgument:&arg atIndex:index];
+                ++index;
+            }
         }
         [invocation invoke];
-        
     }
     ///方法返回类型
     const char* retType = [methodSig methodReturnType];
@@ -198,7 +167,7 @@ static TBMediator *shareFile = nil;
  url sample:
  aaa://targetA/actionB?id=1234
  */
-+ (id)performActionWithUrl:(NSURL *)url completion:(void (^)(NSDictionary *))completion{
++ (id)performActionWithUrl:(NSURL *)url completion:(void (^)(NSDictionary * dict))completion{
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     NSString *urlString = [url query];
     for (NSString *param in [urlString componentsSeparatedByString:@"&"]) {
@@ -207,16 +176,19 @@ static TBMediator *shareFile = nil;
         [params setObject:[elts lastObject] forKey:[elts firstObject]];
     }
     
-    // 这里这么写主要是出于安全考虑，防止黑客通过远程方式调用本地模块。这里的做法足以应对绝大多数场景，如果要求更加严苛，也可以做更加复杂的安全逻辑。
     NSString *actionName = [url.path stringByReplacingOccurrencesOfString:@"/" withString:@""];
-    if ([actionName hasPrefix:@"native"]) {
-        return @(NO);
-    }
+//    if ([actionName hasPrefix:@"native"]) {
+//        return @(NO);
+//    }
+    NSObject *target;
+    Class targetClass = NSClassFromString(url.host);
+    target = [[targetClass alloc]init];
+
+    NSString *errStr = [NSString stringWithFormat:@"对象生成失败_className:>%@",url.host];
+    NSAssert(target, errStr);
     
-    // 这个demo针对URL的路由处理非常简单，就只是取对应的target名字和method名字，但这已经足以应对绝大部份需求。如果需要拓展，可以在这个方法调用之前加入完整的路由逻辑
     SEL sel = NSSelectorFromString(actionName);
-    id result = [self performTarget:url.host action:sel params:params shouldCacheTarget:NO];
-//    id result = [self performTarget:url.host action:actionName params:params shouldCacheTarget:NO];
+    id result = [self performTarget:target action:sel params:(params.count==0?nil:params) orVAList:nil];
     if (completion) {
         if (result) {
             completion(@{@"result":result});
