@@ -28,9 +28,11 @@
 }
 
 - (IBAction)testABtnClicked:(id)sender {
-    [TBMediator callViewController:@"TBTestAViewController" params:@{@"paramsA":@"aaaa"} viewController:self callBack:^(NSDictionary *callBackDic) {
-        
-    }];
+    [TBMediator callViewController:@"TBTestAViewController"
+                            params:@{@"paramsA":@"aaaa"}
+                    viewController:self
+                          callBack:^(NSDictionary *callBackDic) {
+                          }];
 }
 
 - (IBAction)test2BtnClicked:(id)sender {
