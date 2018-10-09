@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TBMediator'
-  s.version          = '0.1.0'
+  s.version          = '1.0'
   s.summary          = '组件化中间件'
   s.description      = "组件化中间件，相当于直接调用对应的类方法 + (void)mediatorLoad:(UIViewController *)fromVC params:(NSDictionary *)params handler:(MediatorBlock)block{}"
 
