@@ -14,7 +14,7 @@ typedef void(^CallBackBlock)(NSDictionary *callBackDic);
 typedef void(^MediatorBlock)(NSDictionary *callBackDic);
 
 ///用协议的目的是在控制器头部方便重写方法
-@protocol TBMediator <NSObject>
+@protocol TBMediator
 
 + (void)mediatorLoad:(UIViewController *)fromVC params:(NSDictionary *)params handler:(MediatorBlock)block;
 

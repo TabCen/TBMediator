@@ -35,10 +35,14 @@
                           }];
 }
 
+
+
 - (IBAction)test2BtnClicked:(id)sender {
     ///调用TBTestAViewController的方法testBFunction
-    [TBMediator performTargetClassName:@"TBTestAViewController" action:@selector(testBFunction) params:nil, nil];
+
     
+    [TBMediator performTargetClassName:@"TBTestAViewController" action:@selector(testBFunction) params:nil, nil];
+
     ///调用方法
     [TBMediator performTarget:self action:@selector(aprint:) params:@"我是一个参数", nil];
     
